@@ -31,7 +31,7 @@ export function SolanaWallet({ mnemonic }: { mnemonic: string }) {
   const handleFetchBalance = async (pubkey: string) => {
     try {
       const response = await axios.post(
-        "https://solana-mainnet.g.alchemy.com/v2/LbFXqIE0hAfeX_B7cheAs32Y7cDT_29A",
+        `${process.env.NEXT_PUBLIC_FETCHBALANCE}`,
         {
           jsonrpc: "2.0",
           id: 1,
@@ -50,7 +50,7 @@ export function SolanaWallet({ mnemonic }: { mnemonic: string }) {
   const handleFetchAccountInfo = async (pubkey: string) => {
     try {
       const response = await axios.post(
-        "https://solana-mainnet.g.alchemy.com/v2/LbFXqIE0hAfeX_B7cheAs32Y7cDT_29A",
+        `${process.env.NEXT_PUBLIC_FETCHINFO}`,
         {
           jsonrpc: "2.0",
           id: 1,
