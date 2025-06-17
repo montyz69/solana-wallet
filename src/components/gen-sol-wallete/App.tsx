@@ -31,7 +31,7 @@ export function SolanaWallet({ mnemonic }: { mnemonic: string }) {
   const handleFetchBalance = async (pubkey: string) => {
     try {
       const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_FETCHBALANCE}`,
+        `${process.env.VITE_VERCEL_ENV_FETCHBALANCE}`,
         {
           jsonrpc: "2.0",
           id: 1,
@@ -50,7 +50,7 @@ export function SolanaWallet({ mnemonic }: { mnemonic: string }) {
   const handleFetchAccountInfo = async (pubkey: string) => {
     try {
       const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_FETCHINFO}`,
+        `${process.env.VITE_VERCEL_ENV_FETCHINFO}`,
         {
           jsonrpc: "2.0",
           id: 1,
